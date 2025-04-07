@@ -1,24 +1,19 @@
 /**
- * Main JavaScript file for the blog website
- * Includes functionality for navigation, image loading, and ad management
+ * JavaScript file for categories page
+ * Includes initialization and interactive functionality
  */
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile Menu Toggle
+    // Initialize existing functions
     initMobileMenu();
-    
-    // Lazy Load Images
     lazyLoadImages();
     
-    // Newsletter Form Handling
-    initNewsletterForm();
-    
-    // Initialize AdSense ads properly
-    initAdSense();
+    // Add category-specific functionality
+    initCategoryCards();
 });
 
 /**
- * Initialize mobile menu functionality
+ * Initialize mobile menu functionality (copied from main.js)
  */
 function initMobileMenu() {
     const menuToggle = document.querySelector('.menu-toggle');
@@ -31,7 +26,6 @@ function initMobileMenu() {
                 mainNav.classList.contains('open'));
         });
         
-        // Close menu when clicking outside
         document.addEventListener('click', function(event) {
             if (!event.target.closest('.main-nav') && 
                 !event.target.closest('.menu-toggle')) {
@@ -43,8 +37,7 @@ function initMobileMenu() {
 }
 
 /**
- * Initialize lazy loading for images
- * Uses Intersection Observer API for efficient loading
+ * Initialize lazy loading for images (copied from main.js)
  */
 function lazyLoadImages() {
     const lazyImages = document.querySelectorAll('img[loading="lazy"]');
@@ -71,7 +64,6 @@ function lazyLoadImages() {
             imageObserver.observe(img);
         });
     } else {
-        // Fallback for older browsers
         lazyImages.forEach(img => {
             img.src = img.dataset.src;
         });
@@ -79,34 +71,36 @@ function lazyLoadImages() {
 }
 
 /**
- * Initialize newsletter form submission
+ * Initialize category cards interactivity
  */
-function initNewsletterForm() {
-    const newsletterForm = document.querySelector('.newsletter-form');
-    if (newsletterForm) {
-        newsletterForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = this.querySelector('input[type="email"]').value;
-            // Add your newsletter submission logic here
-            console.log('Subscribed with email:', email);
-            this.reset();
-            alert('Thanks for subscribing!');
+function initCategoryCards() {
+    const categoryCards = document.querySelectorAll('.category-card');
+    
+    categoryCards.forEach(card => {
+        card.addEventListener('click', function(e) {
+            // Only trigger if clicking outside the button
+            if (!e.target.closest('.btn')) {
+                const button = this.querySelector('.btn');
+                if (button) {
+                    button.click();
+                }
+            }
         });
-    }
+        
+        // Add hover effect for description
+        const description = card.querySelector('.category-description');
+        card.addEventListener('mouseenter', function() {
+            description.style.color = 'var(--primary-color)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            description.style.color = 'var(--text-light)';
+        });
+    });
 }
 
-/**
- * Initialize AdSense ads
- */
-function initAdSense() {
-    if (typeof adsbygoogle !== 'undefined') {
-        adsbygoogle.push({});
-    }
-}
-
-// Additional responsive enhancements
+// Handle resize events
 window.addEventListener('resize', function() {
-    // Close mobile menu on screen resize
     const mainNav = document.querySelector('.main-nav');
     if (window.innerWidth > 768 && mainNav.classList.contains('open')) {
         mainNav.classList.remove('open');
