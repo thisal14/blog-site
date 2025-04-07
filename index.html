@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Site</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Defer non-critical JavaScript -->
+    <script defer src="assets/js/main.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <a href="/">Blog Name</a>
+            </div>
+            <nav class="main-nav">
+                <button class="menu-toggle" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/categories">Categories</a></li>
+                    <li><a href="/popular">Popular</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="featured-post">
+                    <div class="featured-image">
+                        <img src="assets/images/featured-placeholder.jpg" alt="Featured Post" loading="lazy">
+                    </div>
+                    <div class="featured-content">
+                        <div class="category"><a href="/category/tech">Technology</a></div>
+                        <h1>The Latest Blog Post Title That Captures Attention</h1>
+                        <p class="excerpt">An engaging excerpt that gives readers a taste of what this post is all about, encouraging them to click and read more...</p>
+                        <div class="meta">
+                            <span class="date">April 3, 2025</span>
+                            <span class="read-time">5 min read</span>
+                        </div>
+                        <a href="/posts/post-slug" class="btn">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="latest-posts">
+            <div class="container">
+                <h2 class="section-title">Latest Posts</h2>
+                <div class="post-grid">
+                    <!-- Post 1 -->
+                    <article class="post-card">
+                        <div class="post-image">
+                            <img src="assets/images/post1-placeholder.jpg" alt="Post 1" loading="lazy">
+                        </div>
+                        <div class="post-content">
+                            <div class="category"><a href="/category/lifestyle">Lifestyle</a></div>
+                            <h3><a href="/posts/post-1">How to Create an Effective Daily Routine</a></h3>
+                            <p class="excerpt">Discover the secrets to building a productive daily routine that works for you...</p>
+                            <div class="meta">
+                                <span class="date">April 1, 2025</span>
+                                <span class="read-time">4 min read</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Post 2 -->
+                    <article class="post-card">
+                        <div class="post-image">
+                            <img src="assets/images/post2-placeholder.jpg" alt="Post 2" loading="lazy">
+                        </div>
+                        <div class="post-content">
+                            <div class="category"><a href="/category/food">Food</a></div>
+                            <h3><a href="/posts/post-2">10 Quick and Healthy Breakfast Ideas</a></h3>
+                            <p class="excerpt">Start your day right with these nutritious and delicious breakfast options...</p>
+                            <div class="meta">
+                                <span class="date">March 28, 2025</span>
+                                <span class="read-time">6 min read</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Post 3 -->
+                    <article class="post-card">
+                        <div class="post-image">
+                            <img src="assets/images/post3-placeholder.jpg" alt="Post 3" loading="lazy">
+                        </div>
+                        <div class="post-content">
+                            <div class="category"><a href="/category/tech">Technology</a></div>
+                            <h3><a href="/posts/post-3">The Future of AI in Everyday Life</a></h3>
+                            <p class="excerpt">How artificial intelligence is changing the way we live, work, and interact...</p>
+                            <div class="meta">
+                                <span class="date">March 25, 2025</span>
+                                <span class="read-time">7 min read</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Post 4 -->
+                    <article class="post-card">
+                        <div class="post-image">
+                            <img src="assets/images/post4-placeholder.jpg" alt="Post 4" loading="lazy">
+                        </div>
+                        <div class="post-content">
+                            <div class="category"><a href="/category/travel">Travel</a></div>
+                            <h3><a href="/posts/post-4">Hidden Gems: Unexplored Destinations for 2025</a></h3>
+                            <p class="excerpt">Discover these off-the-beaten-path locations before they become tourist hotspots...</p>
+                            <div class="meta">
+                                <span class="date">March 22, 2025</span>
+                                <span class="read-time">8 min read</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                
+                <div class="ad-container">
+                    <!-- Google AdSense Ad Unit -->
+                    <div id="home-banner-ad" class="ad-unit">
+                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        <!-- Home Banner Ad -->
+                        <ins class="adsbygoogle"
+                             style="display:block"
+                             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                             data-ad-slot="XXXXXXXXXX"
+                             data-ad-format="auto"
+                             data-full-width-responsive="true"></ins>
+                        <script>
+                             (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
+                </div>
+                
+                <div class="pagination">
+                    <a href="#" class="active">1</a>
+                    <a href="/page/2">2</a>
+                    <a href="/page/3">3</a>
+                    <span>...</span>
+                    <a href="/page/10">10</a>
+                    <a href="/page/2" class="next">Next →</a>
+                </div>
+            </div>
+        </section>
+        
+        <section class="newsletter">
+            <div class="container">
+                <div class="newsletter-inner">
+                    <h2>Stay Updated</h2>
+                    <p>Subscribe to our newsletter to get the latest posts and updates.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>About Us</h3>
+                    <p>A brief description about this blog and its purpose. What makes it unique and why readers should care.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="/category/tech">Technology</a></li>
+                        <li><a href="/category/lifestyle">Lifestyle</a></li>
+                        <li><a href="/category/food">Food</a></li>
+                        <li><a href="/category/travel">Travel</a></li>
+                        <li><a href="/category/health">Health</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+                        <a href="#" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg></a>
+                        <a href="#" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                        <a href="#" aria-label="Pinterest"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12h8"></path><path d="M12 8v8"></path><path d="M12 3a9 9 0 1 0 0 18 9 9 0 1 0 0-18z"></path></svg></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Blog Name. All rights reserved.</p>
+                <ul class="footer-links">
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                    <li><a href="/terms">Terms of Service</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
