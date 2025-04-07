@@ -3,11 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Site</title>
+    <title>Blog Site - Categories</title>
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Defer non-critical JavaScript -->
+    <script defer src="assets/js/main.js"></script>
 </head>
 <body>
-     <header class="site-header">
+    <header class="site-header">
         <div class="container">
             <div class="logo">
                 <a href="/">Blog Name</a>
@@ -30,9 +35,29 @@
     </header>
 
     <main>
-        <section class="categories-section">
+        <section class="hero">
             <div class="container">
-                <h1 class="section-title">Categories</h1>
+                <div class="featured-post">
+                    <div class="featured-image">
+                        <img src="assets/images/featured-placeholder.jpg" alt="Categories Featured" loading="lazy">
+                    </div>
+                    <div class="featured-content">
+                        <div class="category"><a href="/category/explore">Explore</a></div>
+                        <h1>Discover Our Categories</h1>
+                        <p class="excerpt">Browse through our diverse range of topics and find content that interests you most...</p>
+                        <div class="meta">
+                            <span class="date">April 7, 2025</span>
+                            <span class="read-time">3 min read</span>
+                        </div>
+                        <a href="#categories" class="btn">Explore Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="categories-section" id="categories">
+            <div class="container">
+                <h2 class="section-title">Categories</h2>
                 <div class="categories-grid">
                     <div class="category-card">
                         <div class="category-image">
@@ -42,7 +67,7 @@
                             <h3>Technology</h3>
                             <p class="category-description">Latest trends and innovations in tech</p>
                             <span class="post-count">24 Posts</span>
-                            <a href="#" class="btn">Explore</a>
+                            <a href="/category/tech" class="btn">Explore</a>
                         </div>
                     </div>
                     <div class="category-card">
@@ -53,7 +78,7 @@
                             <h3>Lifestyle</h3>
                             <p class="category-description">Tips for a better daily life</p>
                             <span class="post-count">18 Posts</span>
-                            <a href="#" class="btn">Explore</a>
+                            <a href="/category/lifestyle" class="btn">Explore</a>
                         </div>
                     </div>
                     <div class="category-card">
@@ -64,7 +89,7 @@
                             <h3>Travel</h3>
                             <p class="category-description">Destinations and travel guides</p>
                             <span class="post-count">15 Posts</span>
-                            <a href="#" class="btn">Explore</a>
+                            <a href="/category/travel" class="btn">Explore</a>
                         </div>
                     </div>
                     <div class="category-card">
@@ -75,15 +100,54 @@
                             <h3>Food</h3>
                             <p class="category-description">Recipes and culinary adventures</p>
                             <span class="post-count">12 Posts</span>
-                            <a href="#" class="btn">Explore</a>
+                            <a href="/category/food" class="btn">Explore</a>
                         </div>
                     </div>
+                </div>
+                
+                <div class="ad-container">
+                    <!-- Google AdSense Ad Unit -->
+                    <div id="categories-banner-ad" class="ad-unit">
+                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        <!-- Categories Banner Ad -->
+                        <ins class="adsbygoogle"
+                             style="display:block"
+                             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                             data-ad-slot="XXXXXXXXXX"
+                             data-ad-format="auto"
+                             data-full-width-responsive="true"></ins>
+                        <script>
+                             (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
+                </div>
+                
+                <div class="pagination">
+                    <a href="#" class="active">1</a>
+                    <a href="/categories/page/2">2</a>
+                    <a href="/categories/page/3">3</a>
+                    <span>...</span>
+                    <a href="/categories/page/10">10</a>
+                    <a href="/categories/page/2" class="next">Next →</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="newsletter">
+            <div class="container">
+                <div class="newsletter-inner">
+                    <h2>Stay Updated</h2>
+                    <p>Subscribe to our newsletter to get the latest posts and updates.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
                 </div>
             </div>
         </section>
     </main>
 
-   <footer class="site-footer">
+    <footer class="site-footer">
         <div class="container">
             <div class="footer-columns">
                 <div class="footer-column">
@@ -120,7 +184,5 @@
             </div>
         </div>
     </footer>
-
-    <script src="assets/js/categories.js"></script>
-</body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'92c8acf04eb34557',t:'MTc0NDAyMDAwMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>

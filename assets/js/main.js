@@ -1,6 +1,6 @@
 /**
  * Main JavaScript file for the blog website
- * Includes functionality for navigation, image loading, and ad management
+ * Includes functionality for navigation, image loading, ad management, and page transitions
  */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -13,8 +13,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Newsletter Form Handling
     initNewsletterForm();
     
-    // Initialize AdSense ads properly
+    // Initialize AdSense ads
     initAdSense();
+    
+    // Initialize page transitions
+    initPageTransitions();
 });
 
 /**
@@ -31,7 +34,6 @@ function initMobileMenu() {
                 mainNav.classList.contains('open'));
         });
         
-        // Close menu when clicking outside
         document.addEventListener('click', function(event) {
             if (!event.target.closest('.main-nav') && 
                 !event.target.closest('.menu-toggle')) {
@@ -44,7 +46,6 @@ function initMobileMenu() {
 
 /**
  * Initialize lazy loading for images
- * Uses Intersection Observer API for efficient loading
  */
 function lazyLoadImages() {
     const lazyImages = document.querySelectorAll('img[loading="lazy"]');
@@ -71,7 +72,6 @@ function lazyLoadImages() {
             imageObserver.observe(img);
         });
     } else {
-        // Fallback for older browsers
         lazyImages.forEach(img => {
             img.src = img.dataset.src;
         });
@@ -87,7 +87,6 @@ function initNewsletterForm() {
         newsletterForm.addEventListener('submit', function(e) {
             e.preventDefault();
             const email = this.querySelector('input[type="email"]').value;
-            // Add your newsletter submission logic here
             console.log('Subscribed with email:', email);
             this.reset();
             alert('Thanks for subscribing!');
@@ -104,9 +103,45 @@ function initAdSense() {
     }
 }
 
-// Additional responsive enhancements
+/**
+ * Initialize page transitions
+ */
+function initPageTransitions() {
+    // Create transition overlay
+    const transitionOverlay = document.createElement('div');
+    transitionOverlay.className = 'page-transition';
+    document.body.appendChild(transitionOverlay);
+
+    // Handle all internal links
+    document.querySelectorAll('a[href]').forEach(link => {
+        const href = link.getAttribute('href');
+        // Only apply to internal links (not external or hash links)
+        if (href && href.startsWith('/') || href.includes('html')) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const destination = this.getAttribute('href');
+
+                // Start fade out animation
+                document.body.classList.add('fade-out');
+                transitionOverlay.classList.add('active');
+
+                // Wait for animation to complete
+                setTimeout(() => {
+                    window.location.href = destination;
+                }, 300); // Match this with CSS transition duration
+            });
+        }
+    });
+
+    // Fade in on page load
+    window.addEventListener('load', () => {
+        document.body.classList.remove('fade-out');
+        transitionOverlay.classList.remove('active');
+    });
+}
+
+// Handle resize events
 window.addEventListener('resize', function() {
-    // Close mobile menu on screen resize
     const mainNav = document.querySelector('.main-nav');
     if (window.innerWidth > 768 && mainNav.classList.contains('open')) {
         mainNav.classList.remove('open');
